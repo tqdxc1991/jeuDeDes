@@ -11,7 +11,8 @@ public class Gobelet {
     public Gobelet(int nb_des){
         this.setValeur(0);
         for(int i = 0;i < nb_des;i++){
-            this.mesDes.add(new De());
+            De newde = new De();
+            this.mesDes.add(newde);
         }
 
     }
@@ -27,11 +28,13 @@ public class Gobelet {
     /**
      * change la valeur des dés du gobelet ;
      * met à jour la valeur du gobelet
+     * @return le somme de points de des
      */
     public int lancer(){
         int sum = 0;
         for(De monDe : this.mesDes){
-            sum += monDe.lancer();
+            monDe.lancer();
+            sum += monDe.getValeur();
         }
         this.setValeur(sum);
         return sum;

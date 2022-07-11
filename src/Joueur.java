@@ -5,7 +5,7 @@ public class Joueur {
     /**
      * initialise la valeur du nom du joueur à partir du paramètre nom,
      * initialise le score du joueur à 0
-     * @param nom
+     * @param nom des jouer
      */
     public Joueur(String nom){
         this.setNom(nom);
@@ -17,7 +17,7 @@ public class Joueur {
     }
 
     public void setScore(int score) {
-        this.score = score;
+        this.score += score;
     }
 
     public String getNom() {
@@ -31,18 +31,19 @@ public class Joueur {
     /**
      * prend en paramètre le gobelet de la partie, lance le gobelet, met à
      * jour le score du joueur en fonction du résultat du lancé
-     * @param gogo
+     * @param gogo le goblet de joueur
      */
-    public int jouer(Gobelet gogo){
+    public void jouer(Gobelet gogo){
+        //chaque fois le joueur lance, il a un nouvel score
         this.setScore(gogo.lancer());
-        return gogo.lancer();
+
     }
 
     /**
      * affiche en console le score du joueur
      */
     public void afficher_score(){
-        System.out.println(this.getScore());
+        System.out.println(this.getNom()+ " a eu " + this.getScore());
 
     }
 }

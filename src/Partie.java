@@ -1,3 +1,4 @@
+import java.sql.SQLOutput;
 import java.util.*;
 
 public class Partie {
@@ -21,8 +22,10 @@ public class Partie {
      */
     public void initialiser(String ...noms){
         for(String nom : noms){
-            mesJouers.add(new Joueur(nom));
+            this.mesJouers.add(new Joueur(nom));
+            System.out.println(nom +" a participé dans le jeu!");
         }
+
     }
 
     /**
@@ -32,25 +35,31 @@ public class Partie {
     public List<Joueur> lancer(){
         List<Joueur> gagnants = new ArrayList<>();
 
-        for(int i = 0; i < nb_tours; i++){
+        for(int i = 0; i < this.nb_tours; i++){
             //chaque tour on accumu les score de chaque jouer
-            for(Joueur jojo : mesJouers){
-                jojo.score += jojo.jouer(this.mongobelet);
+            for(Joueur jojo : this.mesJouers){
+                jojo.jouer(this.mongobelet);
                 jojo.afficher_score();
             }
+
         }
 
         int max = 0;
-        for(Joueur jojo : mesJouers){
+        for(Joueur jojo : this.mesJouers){
             if(jojo.getScore() > max){
+                max = jojo.getScore();
                 gagnants.set(0,jojo);
+
             }
             else if(jojo.getScore() == max){
+                max = jojo.getScore();
                 gagnants.add(jojo);
             }
 
         }
 
+
+        System.out.println(gagnants.get(0));
         return gagnants;
     }
 

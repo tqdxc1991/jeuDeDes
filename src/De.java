@@ -15,12 +15,11 @@ public class De {
 
     /**
      * changer la valeur du dé
-     * @return un nombre aléatoire entre 1 et 6
+     * un nombre aléatoire entre 1 et 6
      */
-    public int lancer(){
+    public void lancer(){
         Random r = new Random();
         int numeroLance = r.nextInt(6)+1;
-        System.out.println(numeroLance);
-        return numeroLance;
+        this.setValeur(numeroLance);
     }
 }
