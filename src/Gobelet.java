@@ -1,7 +1,7 @@
 import java.util.*;
 public class Gobelet {
     public int valeur;
-    public List<De> mesDes;
+    public List<De> mesDes = new ArrayList<>();
 
     /**
      * initialise la valeur du gobelet à 0,
@@ -11,7 +11,7 @@ public class Gobelet {
     public Gobelet(int nb_des){
         this.setValeur(0);
         for(int i = 0;i < nb_des;i++){
-            mesDes.add(new De());
+            this.mesDes.add(new De());
         }
 
     }
@@ -28,15 +28,17 @@ public class Gobelet {
      * change la valeur des dés du gobelet ;
      * met à jour la valeur du gobelet
      */
-    public void lancer(){
+    public int lancer(){
         int sum = 0;
         for(De monDe : this.mesDes){
             sum += monDe.lancer();
         }
         this.setValeur(sum);
+        return sum;
     }
 
-    public void afficher(){
+    public void afficher_score(){
+        System.out.println(getValeur());
 
     }
 }
