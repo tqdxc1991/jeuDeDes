@@ -46,4 +46,11 @@ public class Joueur {
         System.out.println(this.getNom()+ " a eu " + this.getScore());
 
     }
+
+    @Override
+    public String toString() {
+        return "Joueur{" + "nom='" + nom + '\'' +
+                ", score=" + score +
+                '}';
+    }
 }

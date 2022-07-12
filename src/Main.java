@@ -29,7 +29,7 @@ public class Main {
 
         testPartie.lancer();
 
-        testPartie.afficher_gagnant();
+
 
     }
 }

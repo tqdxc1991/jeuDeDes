@@ -6,7 +6,7 @@ public class Gobelet {
     /**
      * initialise la valeur du gobelet à 0,
      * génère le nombre de dés nécessaires à la partie et les ajoute au tableau des
-     * @param nb_des
+     * @param nb_des nombre de des dans une gobelet
      */
     public Gobelet(int nb_des){
         this.setValeur(0);
