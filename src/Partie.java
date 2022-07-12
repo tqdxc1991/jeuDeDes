@@ -35,9 +35,11 @@ public class Partie {
      */
     public void lancer(){
         List<Joueur> gagnants = new ArrayList<>();
+        //initialiser la liste avec une premier valeur
         gagnants.add(this.mesJouers.get(0));
 
         for(int i = 0; i < this.nb_tours; i++){
+            System.out.println("Tour numero :"+ (i+1));
             //chaque tour on accumu les score de chaque jouer
             for(Joueur jojo : this.mesJouers){
                 jojo.jouer(this.mongobelet);
@@ -68,7 +70,7 @@ public class Partie {
     public void afficher_gagnant(List<Joueur> gagnants){
 
         //afficher le gagnant
-        System.out.println(Arrays.toString(gagnants.toArray()));
+        System.out.println("le gagnant est : "+ Arrays.toString(gagnants.toArray()));
     }
 
 }
